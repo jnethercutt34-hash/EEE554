@@ -1,0 +1,172 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>EEE 554 Exam 1 Practice Exam</title><style>@page{size:letter;margin:.7in}body{font-family:Arial,sans-serif;color:#111;font-size:10.3pt;line-height:1.4}h1{text-align:center;font-size:19pt;margin:0}.sub{text-align:center;margin:4px 0 16px}h2{font-size:14pt;border-bottom:1px solid #234d6e;padding-bottom:3px;margin:22px 0 8px;page-break-before:always}h2.first{page-break-before:auto}h3{font-size:11.5pt;margin:12px 0 4px;color:#234d6e}p{margin:5px 0}.eq{font-family:"Cambria Math","Times New Roman",serif;font-size:12pt;text-align:center;margin:7px}.box{background:#eef5fb;border-left:3px solid #2d5f88;padding:6px 9px;margin:8px 0}.warn{background:#fff8df;border-left:3px solid #8a6d1d;padding:6px 9px;margin:8px 0}.steps{margin:5px 0 8px 22px;padding:0}.steps li{margin:3px 0}.grid{width:100%;border-collapse:collapse;margin:7px 0}.grid th,.grid td{border:1px solid #aaa;padding:5px;vertical-align:top}.grid th{background:#e8eef2}.small{font-size:9.5pt}.prob{margin:14px 0 6px}.pts{float:right;font-weight:bold;color:#234d6e}.ans{border:1px solid #bbb;border-radius:4px;min-height:70px;margin:6px 0 4px;background:#fdfdfd}.section-pts{font-weight:bold}</style></head><body>
+
+<h1>EEE 554: Exam 1 Practice Exam</h1>
+<div class="sub"><strong>Modules 1 &amp; 2 — Basic Probability and Random Variables</strong><br>Practice problems in the style of Homework 1, Homework 2, and the lecture-note examples</div>
+
+<div class="box"><strong>Instructions (mirrors real exam rules)</strong><ol class="steps">
+<li>Closed book, closed notes. One handwritten formula sheet (letter size, one side) is permitted.</li>
+<li>Show all work — a bare final answer earns partial credit at best.</li>
+<li>Total: <strong>100 points</strong> across Problems 1&ndash;13 (Sections A&ndash;C). The real Exam 1 will be shorter (roughly 6&ndash;9 problems in 75 minutes); this set is intentionally broader so you can drill every skill from the study guide. Section D (Problems 14&ndash;16) is bonus gap-fill practice, not counted in the 100.</li>
+<li>Suggested pacing if you want exam-realistic practice: give yourself <strong>100 minutes</strong> (1 minute per point) and no notes.</li>
+<li>Solutions with full work are in the companion file <code>EEE554_Exam1_Practice_Exam_Solutions.html</code>. Don't peek until you've committed an answer.</li>
+</ol></div>
+
+<h2 class="first">Section A — Probability Foundations (Module 1) <span class="section-pts">[40 pts]</span></h2>
+
+<div class="prob"><strong>Problem 1</strong><span class="pts">8 pts</span><br>
+The sample space is <span class="eq" style="display:inline">S = {(x,y): 0 ≤ x ≤ 4, 0 ≤ y ≤ 4}</span>, and outcomes are equally likely (probability of an event is proportional to its area). Define events
+<span class="eq" style="display:inline">A = {(x,y): y ≤ 4 − x}</span> and <span class="eq" style="display:inline">B = {(x,y): x ≤ 2}</span>.
+<ol class="steps">
+<li>(2 pts) Sketch the regions A and B in the (x,y)-plane.</li>
+<li>(3 pts) Find Pr(A), Pr(B), and Pr(A∩B).</li>
+<li>(2 pts) Find Pr(A | B).</li>
+<li>(1 pt) Are A and B independent? Justify with numbers, not just intuition.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 2</strong><span class="pts">8 pts</span><br>
+An inline sensor on a factory line flags parts it believes are defective. Only 2% of parts are actually defective. If a part is defective, the sensor flags it with probability 0.95. If a part is <em>not</em> defective, the sensor still (incorrectly) flags it with probability 0.03.
+<ol class="steps">
+<li>(3 pts) Find the probability that a randomly chosen part gets flagged.</li>
+<li>(5 pts) Given that a part is flagged, find the probability it is actually defective.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 3</strong><span class="pts">6 pts</span><br>
+Two fair six-sided dice are rolled. Let A = "the sum of the two dice is 7" and B = "the first die shows a 4."
+<ol class="steps">
+<li>(4 pts) Compute Pr(A), Pr(B), and Pr(A∩B) directly by counting outcomes.</li>
+<li>(2 pts) Are A and B independent? Show the check numerically — don't just guess.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 4</strong><span class="pts">8 pts</span><br>
+A plant has three machines producing items in proportions 30%, 45%, and 25% (machines 1, 2, 3). Their defect rates are 4%, 2%, and 5%, respectively.
+<ol class="steps">
+<li>(4 pts) Find the overall probability that a randomly selected item is defective.</li>
+<li>(4 pts) Given that an item is defective, find the probability it came from machine 2.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 5</strong><span class="pts">10 pts</span><br>
+A binary transmitter sends X ∈ {0,1} with Pr(X=0) = 0.6 and Pr(X=1) = 0.4. The channel is characterized by Pr(Y=1|X=1) = 0.85 and Pr(Y=0|X=0) = 0.92.
+<ol class="steps">
+<li>(4 pts) Build the table of all four joint probabilities Pr(X=i, Y=j).</li>
+<li>(2 pts) Find Pr(Y=1).</li>
+<li>(2 pts) Find Pr(X=1 | Y=1).</li>
+<li>(2 pts) Find the probability of error, P<sub>e</sub>.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<h2>Section B — PMF, PDF, CDF (Module 2) <span class="section-pts">[30 pts]</span></h2>
+
+<div class="prob"><strong>Problem 6</strong><span class="pts">8 pts</span><br>
+A discrete RV X, representing an inspection grade, takes values in {−1, 0, 1, 2} with CDF
+<div class="eq">F<sub>X</sub>(x) = 0 for x&lt;−1; &nbsp; 0.15 for −1≤x&lt;0; &nbsp; 0.45 for 0≤x&lt;1; &nbsp; 0.75 for 1≤x&lt;2; &nbsp; 1 for x≥2</div>
+<ol class="steps">
+<li>(3 pts) Find the PMF of X (list Pr(X=x<sub>i</sub>) for each value).</li>
+<li>(2 pts) Find Pr(−1 ≤ X ≤ 1).</li>
+<li>(3 pts) Find Pr(X &gt; 0) two different ways and confirm they agree.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 7</strong><span class="pts">8 pts</span><br>
+A sensor's lifetime X (in years) has PDF f<sub>X</sub>(x) = 3e<sup>−3x</sup> for x ≥ 0 (and 0 otherwise).
+<ol class="steps">
+<li>(2 pts) Verify this is a valid PDF.</li>
+<li>(2 pts) Find the CDF F<sub>X</sub>(x).</li>
+<li>(2 pts) Find Pr(0.2 &lt; X ≤ 0.5).</li>
+<li>(2 pts) Find the probability the sensor lasts more than 1 year.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 8</strong><span class="pts">8 pts</span><br>
+A signal amplitude X ~ U(−5, 5) passes through a limiter, producing Y: Y = X for −3 ≤ X ≤ 3; Y = 3 for X &gt; 3; Y = −3 for X &lt; −3.
+<ol class="steps">
+<li>(3 pts) Find Pr(Y = 3) and Pr(Y = −3).</li>
+<li>(2 pts) Find the PDF of Y for −3 &lt; y &lt; 3.</li>
+<li>(3 pts) Confirm the total probability (point masses + continuous part) equals 1, and describe the shape of the CDF of Y.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 9</strong><span class="pts">6 pts</span><br>
+For each scenario, name the standard RV class (Bernoulli, Binomial, Poisson, Uniform, Exponential, Gaussian, or Rayleigh) and give its parameter(s). No probability calculation needed.
+<ol class="steps">
+<li>Number of typos on a page, when typos occur independently at an average rate of 0.5 per page.</li>
+<li>The exact minute (past the hour) a bus arrives, equally likely anywhere in a 10-minute window.</li>
+<li>The magnitude of a 2-D wind velocity vector whose components are independent, zero-mean Gaussians with equal variance σ².</li>
+<li>The number of heads in 20 flips of a coin with Pr(heads) = 0.3.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<h2>Section C — Moments, Gaussian RVs, Transformations (Module 2) <span class="section-pts">[30 pts]</span></h2>
+
+<div class="prob"><strong>Problem 10</strong><span class="pts">8 pts</span><br>
+Using the RV X from Problem 6 (PMF: Pr(X=−1)=0.15, Pr(X=0)=0.30, Pr(X=1)=0.30, Pr(X=2)=0.25):
+<ol class="steps">
+<li>(2 pts) Find E[X].</li>
+<li>(2 pts) Find E[X²].</li>
+<li>(2 pts) Find Var(X).</li>
+<li>(2 pts) If Y = 2X − 3, find E[Y] and Var(Y) using the properties of expectation — do not recompute from a new PMF.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 11</strong><span class="pts">8 pts</span><br>
+An amplifier's output noise voltage is X ~ N(2, 4) (mean 2, variance 4).
+<ol class="steps">
+<li>(3 pts) Express Pr(X &gt; 6) in terms of the Q-function and evaluate it.</li>
+<li>(3 pts) Find Pr(−2 &lt; X &lt; 2).</li>
+<li>(2 pts) Find x<sub>0</sub> such that Pr(X &gt; x<sub>0</sub>) = 0.01. (You may use Q(2.33) ≈ 0.01.)</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 12</strong><span class="pts">8 pts</span><br>
+Let X ~ U(2, 6) and define Y = g(X) = −2X + 10.
+<ol class="steps">
+<li>(2 pts) Find the support of Y.</li>
+<li>(2 pts) Explain why g is one-to-one on this support, then find f<sub>Y</sub>(y) using the one-to-one transformation formula.</li>
+<li>(4 pts) Find E[Y] and Var(Y) two ways: (i) directly from f<sub>Y</sub>(y), and (ii) using linearity/scaling properties applied to E[X] and Var(X). Confirm they match.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 13</strong><span class="pts">6 pts</span><br>
+The characteristic function of an exponential RV X with rate λ is Φ<sub>X</sub>(ω) = λ/(λ − jω).
+<ol class="steps">
+<li>(3 pts) Use Φ<sub>X</sub>(ω) to find E[X].</li>
+<li>(3 pts) Use Φ<sub>X</sub>(ω) to find E[X²], then Var(X).</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<h2>Section D — Bonus: Gap-Fill Practice <span class="section-pts">[not scored in the 100]</span></h2>
+<div class="box">These three cover topics that are explicitly in the reading list and Homework 2 but were under-represented in Sections A&ndash;C: the Poisson-as-limit-of-Binomial connection, many-to-one (squaring) transformations, and the Chebyshev inequality.</div>
+
+<div class="prob"><strong>Problem 14 — Binomial → Poisson</strong><span class="pts">bonus</span><br>
+A batch of 200 components has an independent per-component defect rate of 1.5%. Let X = number of defective components, exactly Binomial(M=200, p=0.015).
+<ol class="steps">
+<li>Using the limit M→∞, p→0 with Mp=λ held fixed, find λ for this batch and write the approximating Poisson PMF.</li>
+<li>Using the Poisson approximation, estimate Pr(X=3) and Pr(X≤1).</li>
+<li>In one sentence, explain why the Poisson approximation is reasonable here.</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 15 — Many-to-one transformation</strong><span class="pts">bonus</span><br>
+Let X ~ N(0, 4) (mean 0, variance 4) and Y = X².
+<ol class="steps">
+<li>Find the support of Y, and state how many roots x map to a given y &gt; 0.</li>
+<li>Derive f<sub>Y</sub>(y) using the many-to-one transformation formula (sum over both roots).</li>
+<li>Evaluate f<sub>Y</sub>(1).</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="prob"><strong>Problem 16 — Chebyshev inequality</strong><span class="pts">bonus</span><br>
+A measurement X has unknown distribution but known mean μ = 50 and variance σ² = 9.
+<ol class="steps">
+<li>Use Chebyshev's inequality to bound Pr(|X−50| &gt; 12).</li>
+<li>Find a value γ such that Chebyshev guarantees Pr(|X−50| &gt; γ) ≤ 0.05.</li>
+<li>Compare γ from part 2 to what you'd get by assuming X is Gaussian and using the "~95% within 2σ" rule. Which bound is tighter, and why is that expected?</li>
+</ol>
+<div class="ans">&nbsp;</div></div>
+
+<div class="warn" style="margin-top:20px"><strong>Before you check solutions:</strong> re-attempt any problem you struggled with from a blank page. If you needed the study guide open, that topic needs another pass before the real exam.</div>
+
+</body></html>

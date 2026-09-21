@@ -1,0 +1,167 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>EEE 554 Exam 1 Formula Sheet</title>
+<style>
+@page{size:letter;margin:.32in}
+*{box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;color:#111;font-size:7.1pt;line-height:1.2;column-count:3;column-gap:11px;column-rule:1px solid #bbb;margin:0}
+h1{column-span:all;text-align:center;font-size:12pt;margin:0 0 1px}
+.sub{column-span:all;text-align:center;font-size:7.3pt;margin:0 0 6px;color:#333}
+h2{font-size:7.8pt;background:#234d6e;color:#fff;padding:1.5px 4px;margin:6px 0 2px;break-after:avoid}
+h3{font-size:7.3pt;margin:4px 0 1px;color:#234d6e;break-after:avoid}
+p{margin:1.5px 0}
+.eq{font-family:"Cambria Math","Times New Roman",serif;margin:1px 0 3px;white-space:normal}
+.nm{font-family:Arial,Helvetica,sans-serif;color:#8a1d1d;font-weight:bold;font-style:normal}
+.blk{break-inside:avoid;margin-bottom:4px}
+table{border-collapse:collapse;width:100%;margin:1px 0 3px;font-size:6.7pt}
+td,th{border:.5px solid #999;padding:1px 2px;vertical-align:top}
+th{background:#e8eef2}
+.note{color:#555;font-style:italic}
+.legend span{display:inline-block;margin-right:6px}
+ul{margin:1px 0 2px 10px;padding:0}
+li{margin:0}
+</style></head><body>
+
+<h1>EEE 554 — Exam 1 Formula Sheet</h1>
+<div class="sub">Modules 1 &amp; 2 — equations and notation only, no worked examples. <span style="color:#8a1d1d;font-weight:bold">Red</span> = name of the result, in case the exam names it instead of giving the formula.</div>
+
+<div class="blk">
+<h2>Notation</h2>
+<div class="legend">
+<span><b>S</b>=sample space</span>
+<span><b>∅</b>=impossible event</span>
+<span><b>A<sup>c</sup></b>=not A</span>
+<span><b>A∪B</b>=A or B (or both)</span>
+<span><b>A∩B</b>=AB=A and B</span>
+<span><b>A⊂B</b>=A subset of B</span>
+<span><b>P(A|B)</b>="prob of A given B"</span>
+<span><b>~</b>="is distributed as"</span>
+<span><b>u(x)</b>=unit step</span>
+<span><b>δ(x)</b>=Dirac delta / unit impulse</span>
+<span><b>Σ</b>=sum (discrete)</span>
+<span><b>∫</b>=integral (continuous)</span>
+</div>
+<h3>Read the notation aloud:</h3>
+<p><b>P(A|B)</b> = "prob. of A given B" — <b>P(B|A)</b> = "prob. of B given A" (NOT the same thing)</p>
+<p><b>P(A∩B)</b> = "prob. A and B both occur" — <b>P(A∪B)</b> = "prob. A or B or both occur"</p>
+<p class="note">The event after the bar is what you already know happened. In P(A|B), start inside B, then ask what fraction of B is also A — that's why P(B) is in the denominator.</p>
+</div>
+
+<div class="blk">
+<h2>Axioms &amp; Set Rules</h2>
+<div class="eq"><span class="nm">Axioms of probability:</span> P(A) ≥ 0; &nbsp; P(S) = 1; &nbsp; P(∅) = 0</div>
+<div class="eq"><span class="nm">Axiom 3 (mutually exclusive):</span> A∩B=∅ ⇒ P(A∪B)=P(A)+P(B)</div>
+<div class="eq"><span class="nm">Complement rule:</span> P(A<sup>c</sup>) = 1 − P(A)</div>
+<div class="eq"><span class="nm">Complement rule (conditional form):</span> P(A<sup>c</sup>|B) = 1 − P(A|B) &nbsp;(holds for any fixed B — e.g. P(Y=0|X=1)=1−P(Y=1|X=1))</div>
+<div class="eq"><span class="nm">Union / inclusion–exclusion rule:</span> P(A∪B) = P(A)+P(B)−P(A∩B)</div>
+<div class="eq"><span class="nm">Subset property:</span> if B⊂A: P(A|B)=1; &nbsp; if A⊂B: P(A|B)=P(A)/P(B) ≥ P(A)</div>
+</div>
+
+<div class="blk">
+<h2>Conditional Prob., Bayes, Total Prob.</h2>
+<div class="eq"><span class="nm">Conditional probability (definition):</span> P(A|B) = P(A∩B)/P(B), P(B)≠0</div>
+<div class="eq"><span class="nm">Multiplication rule (chain rule):</span> P(A∩B) = P(A|B)P(B) = P(B|A)P(A)</div>
+<div class="eq"><span class="nm">Bayes' theorem (Bayes' rule):</span> P(A|B) = P(B|A)P(A) / P(B)</div>
+<div class="eq"><span class="nm">Partition (definition):</span> {B<sub>i</sub>}: B<sub>i</sub>∩B<sub>j</sub>=∅ (i≠j), ∪B<sub>i</sub>=S</div>
+<div class="eq"><span class="nm">Law of total probability:</span> P(A) = Σ<sub>i</sub> P(A|B<sub>i</sub>)P(B<sub>i</sub>)</div>
+<div class="eq"><span class="nm">Bayes' theorem (generalized, with partition):</span> P(B<sub>i</sub>|A) = P(A|B<sub>i</sub>)P(B<sub>i</sub>) / Σ<sub>j</sub>P(A|B<sub>j</sub>)P(B<sub>j</sub>)</div>
+<div class="eq"><span class="nm">Probability of error (binary channel):</span> P<sub>e</sub>=P(Y=0|X=1)P(X=1)+P(Y=1|X=0)P(X=0)</div>
+</div>
+
+<div class="blk">
+<h2>Independence</h2>
+<div class="eq"><span class="nm">Independence (definition):</span> A,B indep. ⟺ P(A∩B)=P(A)P(B) ⟺ P(A|B)=P(A)</div>
+<div class="eq"><span class="nm">Independence property:</span> indep. ⇒ A<sup>c</sup>,B also indep.; A<sup>c</sup>,B<sup>c</sup> also indep.</div>
+<div class="eq"><span class="nm">Mutual independence:</span> B<sub>1</sub>,…,B<sub>N</sub> indep. ⇒ P(∩B<sub>i</sub>) = Π P(B<sub>i</sub>)</div>
+<p class="note">mutually exclusive (nonzero-prob.) events are NEVER independent</p>
+</div>
+
+<div class="blk">
+<h2>CDF (discrete &amp; continuous)</h2>
+<div class="eq"><span class="nm">CDF (definition):</span> F<sub>X</sub>(x) = P(X≤x); F<sub>X</sub>(−∞)=0, F<sub>X</sub>(∞)=1, nondecreasing</div>
+<div class="eq"><span class="nm">Interval probability from CDF:</span> P(x<sub>1</sub>&lt;X≤x<sub>2</sub>) = F<sub>X</sub>(x<sub>2</sub>) − F<sub>X</sub>(x<sub>1</sub>)</div>
+<div class="eq"><span class="nm">Tail (complement) probability:</span> P(X&gt;x) = 1 − F<sub>X</sub>(x)</div>
+<div class="eq"><span class="nm">Point-mass probability (CDF jump):</span> P(X=x<sub>0</sub>) = F<sub>X</sub>(x<sub>0</sub>) − F<sub>X</sub>(x<sub>0</sub><sup>−</sup>)</div>
+</div>
+
+<div class="blk">
+<h2>PMF (discrete X)</h2>
+<div class="eq"><span class="nm">PMF (definition):</span> f<sub>X</sub>(x) = Σ<sub>i</sub> P(X=x<sub>i</sub>) δ(x−x<sub>i</sub>)</div>
+<p class="note">"Find the PMF" = list P(X=x<sub>i</sub>) for every value x<sub>i</sub>. Given a CDF, each PMF value IS the size of the CDF jump at that x<sub>i</sub> (see Point-mass/CDF jump formula above) — that's the whole method.</p>
+<div class="eq"><span class="nm">Probability from PMF:</span> P(x<sub>1</sub>≤X≤x<sub>2</sub>) = ∫<sub>x1</sub><sup>x2</sup> f<sub>X</sub>(x)dx = Σ P(X=x<sub>i</sub>) in range</div>
+<div class="eq"><span class="nm">PMF normalization:</span> Σ<sub>all i</sub> P(X=x<sub>i</sub>) = 1</div>
+</div>
+
+<div class="blk">
+<h2>PDF (continuous X)</h2>
+<div class="eq"><span class="nm">PDF (definition):</span> f<sub>X</sub>(x) = dF<sub>X</sub>(x)/dx ≥ 0; F<sub>X</sub>(x) = ∫<sub>−∞</sub><sup>x</sup> f<sub>X</sub>(t)dt</div>
+<div class="eq"><span class="nm">Probability from PDF / normalization:</span> P(a≤X≤b) = ∫<sub>a</sub><sup>b</sup> f<sub>X</sub>(x)dx; ∫<sub>−∞</sub><sup>∞</sup> f<sub>X</sub>(x)dx = 1</div>
+<p class="note">"Verify a valid PDF/PMF" = check BOTH conditions: (1) f≥0 everywhere (nonneg., above) AND (2) total = 1 (normalization, above). Either one alone is not enough.</p>
+<div class="eq"><span class="nm">Zero point-probability (continuous RV):</span> P(X=x<sub>0</sub>) = 0</div>
+<p class="note">mixed RV: CDF jump at x<sub>i</sub> ⇒ PDF gets +P(X=x<sub>i</sub>)δ(x−x<sub>i</sub>)</p>
+</div>
+
+<div class="blk">
+<h2>Expectation, Variance, Moments</h2>
+<div class="eq"><span class="nm">Mean / expected value:</span> E[X] = Σx<sub>i</sub>P(X=x<sub>i</sub>) &nbsp;or&nbsp; ∫xf<sub>X</sub>(x)dx</div>
+<div class="eq"><span class="nm">Expected value of a function (LOTUS):</span> E[g(X)] = Σg(x<sub>i</sub>)P(X=x<sub>i</sub>) &nbsp;or&nbsp; ∫g(x)f<sub>X</sub>(x)dx</div>
+<div class="eq"><span class="nm">Linearity of expectation:</span> E[aX+b] = aE[X]+b &nbsp;(a,b constants)</div>
+<div class="eq"><span class="nm">Variance (computational formula):</span> Var(X) = E[X²]−(E[X])² = E[(X−μ<sub>X</sub>)²]</div>
+<div class="eq"><span class="nm">Variance scaling properties:</span> Var(b)=0; Var(X+b)=Var(X); Var(aX+b)=a²Var(X)</div>
+<div class="eq"><span class="nm">Moments (definition):</span> n<sup>th</sup> moment E[X<sup>n</sup>]; n<sup>th</sup> central moment E[(X−μ<sub>X</sub>)<sup>n</sup>]</div>
+<div class="eq"><span class="nm">Characteristic function (definition):</span> Φ<sub>X</sub>(ω)=E[e<sup>jωX</sup>]=∫e<sup>jωx</sup>f<sub>X</sub>(x)dx</div>
+<div class="eq"><span class="nm">Moment from characteristic function:</span> E[X<sup>n</sup>] = (1/j<sup>n</sup>) · d<sup>n</sup>Φ<sub>X</sub>(ω)/dω<sup>n</sup> |<sub>ω=0</sub></div>
+<div class="eq"><span class="nm">Chebyshev's inequality:</span> P(|X−μ<sub>X</sub>|&gt;γ) ≤ σ<sub>X</sub>²/γ²</div>
+<div class="eq"><span class="nm">Sample mean &amp; sample variance (estimators):</span> μ̂=1/M·Σx<sub>i</sub>; σ̂²=1/M·Σx<sub>i</sub>²−μ̂²</div>
+</div>
+
+<div class="blk">
+<h2>Gaussian &amp; Q-function</h2>
+<div class="eq"><span class="nm">Gaussian (normal) PDF:</span> X~N(μ,σ²): f<sub>X</sub>(x) = 1/√(2πσ²) · e<sup>−(x−μ)²/(2σ²)</sup></div>
+<div class="eq"><span class="nm">Standardization (Z-score):</span> Z=(X−μ)/σ ~ N(0,1); F<sub>X</sub>(x)=Φ((x−μ)/σ)=1−Q((x−μ)/σ)</div>
+<div class="eq"><span class="nm">Gaussian tail probability / Q-function (definition):</span> P(X&gt;x) = Q((x−μ)/σ); Q(x) = 1/√(2π) ∫<sub>x</sub><sup>∞</sup> e<sup>−t²/2</sup>dt</div>
+<div class="eq"><span class="nm">Q-function properties:</span> Q(0)=0.5; Q(−x)=1−Q(x); Q(x)=0.5·erfc(x/√2)</div>
+<div class="eq"><span class="nm">Sum of independent Gaussians:</span> iid X<sub>i</sub>~N(μ,σ²), i=1..M ⇒ Y=ΣX<sub>i</sub> ~ N(Mμ, Mσ²)</div>
+</div>
+
+<div class="blk">
+<h2>Standard Distributions</h2>
+<table>
+<tr><th>RV</th><th>PMF/PDF</th><th>E[X]</th><th>Var(X)</th></tr>
+<tr><td>Bernoulli(p)</td><td>P(1)=p, P(0)=1−p</td><td>p</td><td>p(1−p)</td></tr>
+<tr><td>Binomial(N,p)</td><td>P(k)=C(N,k)p<sup>k</sup>(1−p)<sup>N−k</sup></td><td>Np</td><td>Np(1−p)</td></tr>
+<tr><td>Poisson(λ)</td><td>P(k)=e<sup>−λ</sup>λ<sup>k</sup>/k!</td><td>λ</td><td>λ</td></tr>
+<tr><td>Uniform(a,b)</td><td>f=1/(b−a)</td><td>(a+b)/2</td><td>(b−a)²/12</td></tr>
+<tr><td>Exponential(λ)</td><td>f=λe<sup>−λx</sup>u(x)</td><td>1/λ</td><td>1/λ²</td></tr>
+<tr><td>Gaussian(μ,σ²)</td><td>see above</td><td>μ</td><td>σ²</td></tr>
+<tr><td>Rayleigh(σ)</td><td>f=(x/σ²)e<sup>−x²/2σ²</sup>u(x)</td><td>σ√(π/2)</td><td>(2−π/2)σ²</td></tr>
+</table>
+<h3>Recognize the story (for "which RV is this?" problems):</h3>
+<div class="legend">
+<span><b>Bernoulli</b>=1 trial, success/fail</span>
+<span><b>Binomial</b>=# successes in N indep. trials</span>
+<span><b>Poisson</b>=# arrivals/events in fixed interval, constant rate</span>
+<span><b>Uniform</b>=every value in interval equally likely</span>
+<span><b>Exponential</b>=waiting time to next event, constant rate</span>
+<span><b>Gaussian</b>=sum/combo of many small indep. effects</span>
+<span><b>Rayleigh</b>=magnitude of a 2-D vector w/ iid zero-mean Gaussian components (e.g. fading-channel amplitude, wind speed from (v<sub>x</sub>,v<sub>y</sub>))</span>
+</div>
+<div class="eq"><span class="nm">Binomial coefficient ("N choose k"):</span> C(N,k) = N!/(k!(N−k)!)</div>
+<div class="eq"><span class="nm">Binomial → Poisson limit:</span> M→∞, p→0, Mp=λ fixed</div>
+</div>
+
+<div class="blk">
+<h2>Transformations Y = g(X)</h2>
+<h3>One-to-one (monotonic, invertible):</h3>
+<div class="eq"><span class="nm">CDF transformation:</span> F<sub>Y</sub>(y) = F<sub>X</sub>(g<sup>−1</sup>(y))</div>
+<div class="eq"><span class="nm">PDF transformation (Jacobian / inverse-function formula):</span> f<sub>Y</sub>(y) = f<sub>X</sub>(g<sup>−1</sup>(y)) · |d[g<sup>−1</sup>(y)]/dy| = f<sub>X</sub>(g<sup>−1</sup>(y)) / |g′(g<sup>−1</sup>(y))|</div>
+<div class="eq"><span class="nm">Affine transformation (Y=aX+b):</span> f<sub>Y</sub>(y) = (1/|a|) f<sub>X</sub>((y−b)/a)</div>
+<h3>Many-to-one (N roots x<sub>i</sub>=g<sup>−1</sup>(y)):</h3>
+<div class="eq"><span class="nm">Many-to-one formula (sum over roots):</span> f<sub>Y</sub>(y) = Σ<sub>i=1</sub><sup>N</sup> f<sub>X</sub>(x<sub>i</sub>) / |g′(x<sub>i</sub>)|</div>
+<div class="eq"><span class="nm">Absolute-value transformation (Y=|X|):</span> f<sub>Y</sub>(y) = f<sub>X</sub>(y)+f<sub>X</sub>(−y), y≥0</div>
+<div class="eq"><span class="nm">Squaring transformation (Y=X²):</span> roots ±√y, g′(x)=2x &nbsp;⇒&nbsp; f<sub>Y</sub>(y)=[f<sub>X</sub>(√y)+f<sub>X</sub>(−√y)]/(2√y), y&gt;0</div>
+<h3>General / clipping (mixed RV):</h3>
+<div class="eq"><span class="nm">General transformation procedure:</span> find S<sub>Y</sub>=g(S<sub>X</sub>) first; F<sub>Y</sub>(y)=P(X∈R<sub>y</sub>), R<sub>y</sub>={x: g(x)≤y}</div>
+<div class="eq"><span class="nm">Clipping / saturation formula:</span> Y=min(X,x<sub>max</sub>): P(Y=x<sub>max</sub>) = P(X≥x<sub>max</sub>) = 1−F<sub>X</sub>(x<sub>max</sub><sup>−</sup>)</div>
+<div class="eq"><span class="nm">Mixed-RV rule:</span> g(x) constant on an interval ⇒ Y has a point mass (CDF jump) there</div>
+</div>
+
+</body></html>
